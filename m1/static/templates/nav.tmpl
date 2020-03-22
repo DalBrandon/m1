@@ -1,0 +1,22 @@
+
+{{/*
+// --------------------------------------------------------------------
+// nav.tmpl -- For nav area that fits to left of most pages.
+//
+// Created: 12/29/14 DLB
+// --------------------------------------------------------------------
+*/}}
+
+<div id="nav_area">
+{{if .IsLoggedIn}}
+<div class="btn_nav_div"><a class="btn_nav" href="Accounts"> Accounts </a></div>
+<div class="btn_nav_div"><a class="btn_nav" href="Cats"> Cats </a></div>
+<div class="btn_nav_div"><a class="btn_nav" href="Vendors"> Vendors </a></div>
+<div class="btn_nav_div"><a class="btn_nav" href="Input"> Input </a></div>
+<div class="btn_nav_div"><a class="btn_nav" href="Tools"> Tools </a></div>
+{{if .IsAdmin}}
+<div class="btn_nav_div"><a class="btn_nav" href="Admin"> Admin </a></div>
+{{end}}
+<div class="btn_nav_div"><a class="btn_nav" href="Help"> Help </a></div>
+{{end}}
+</div>

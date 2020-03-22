@@ -1,0 +1,100 @@
+{{/*
+// --------------------------------------------------------------------
+// admin.tmpl -- template to run admin page.
+//
+// Created: 2018-10-04 DLB for Epic
+// Copied:  2020-03-17 DLB for m1
+// --------------------------------------------------------------------
+*/}}
+
+<script type="text/javascript">
+
+var xhttp = new XMLHttpRequest();
+
+function addTextToTerminal(str) {
+    //console.log("In add text to terminal.");
+    var txt = document.getElementById("terminal_output").value;
+    txt += "\n";
+    txt += str;
+    document.getElementById("terminal_output").value = txt;
+    document.getElementById("terminal_output").scrollTop = 99999;
+}
+
+function execCommand(cmd) {
+
+    xhttp.onreadystatechange = function() {
+        //console.log("on ready state change.");
+        if (this.readyState == 4 && this.status == 200) {
+            var stuff = JSON.parse(this.responseText);
+            var sout = atob(stuff.CommandOutput);
+            addTextToTerminal(sout);
+        }
+    };
+    xhttp.open("POST", "AdminCommand", true);
+    xhttp.setRequestHeader("Content-type", "text/plain");
+    xhttp.send(cmd);
+}
+
+function checkEnter(e) {
+    var cCode = e.which;
+    if (cCode == 13) {
+        var txt = document.getElementById("terminal_input").value;
+        addTextToTerminal(">" + txt)
+        //console.log("calling btoa on ", txt);
+        var btxt = btoa(txt);
+        //console.log("sending ", btxt);
+        execCommand(btxt);
+    }
+}
+
+var termfont = 10;
+
+function onTermClear() {
+    document.getElementById("terminal_output").value = "";
+    termfont = 10;
+    setTermFontSize(termfont);
+}
+
+function setTermFontSize(sz) {
+    var box = document.getElementById("terminal_output");
+    var st = sz + "pt";
+    box.style.fontSize = st;
+}
+
+function onTermBigger() {
+    termfont += 1;
+    if (termfont > 30) {
+        termfont = 30;
+    }
+    setTermFontSize(termfont);
+}
+
+function onTermSmaller() {
+    termfont -= 1;
+    if (termfont < 4) {
+        termfont = 4;
+    }
+    setTermFontSize(termfont);
+}
+
+</script>
+
+<div class="content_area">
+<div class="page_title">Administration for m1</div>
+
+<div id="term_control_area">
+    <div class="term_btn_div"><button id="clear_btn" onclick="onTermClear()">Clear</button></div>
+    <div class="term_btn_div"><button id="bigger_btn" onclick="onTermBigger()">Bigger</button></div>
+    <div class="term_btn_div"><button id="smaller_btn" onclick="onTermSmaller()">Smaller</button></div>
+</div>
+
+<div class="terminal_output_area">
+    <textarea  id="terminal_output" name="Description" > </textarea>
+</div>
+
+<div class="terminal_input_area">
+    <div class="terminal_label">Command:</div>
+    <input id="terminal_input" type="text" name="Command"  onKeyPress="checkEnter(event)">
+</div>
+
+</div>

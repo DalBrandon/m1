@@ -1,0 +1,83 @@
+{{/*
+// --------------------------------------------------------------------
+// accounts.tmpl -- template for accounts page.
+//
+// Created 2020-03-17 DLB
+// --------------------------------------------------------------------
+*/}}
+
+<script src="js/m1utils.js"></script>
+
+<script type="application/json" id="users">
+{{.UsersJson}}
+</script>
+
+<script type="text/javascript">
+
+var gShowAllUsers = true
+
+function updateActiveUI() {
+    if (gShowAllUsers) {
+        document.getElementById("nep_user_active_btn").innerHTML = "Show Some";
+    } else {
+        document.getElementById("nep_user_active_btn").innerHTML = "Show All";
+    }
+}
+
+function toggleActiveUsers() {
+    gShowAllUsers = !gShowAllUsers;
+    updateActiveUI();
+    fillUsers("nep_user_field", gShowAllUsers);
+}
+
+function startUp() {
+    updateActiveUI();
+    fillUsers("nep_user_field", gShowAllUsers);
+    var ok = setSelectionBox("nep_user_field", "{{.Defaults.User}}");
+    if (!ok) {
+        toggleActiveDesigners();
+        setSelectionBox("nep_user_field", "{{.Defaults.User}}");
+    }
+}
+
+</script>
+
+<div class="content_area">
+<div class="page_title"> {{- .PageTitle -}}</div>
+
+<span id="dbmsg"></span>
+<div class="inputform_area">
+    <form action="SubmitNewEpicPN" method="post">
+        <div id="nep_user">
+            <div class="inputform_paramblock" id="nep_user_block">
+                <div class="inputform_label" id="nep_user_label">User</div>
+                <div class="inputform_selection">
+                    <select id="nep_user_field" name="User">
+                    </select>
+                </div>
+                <div id="nep_user_active_div" class="active_btn_div">
+                    <button type="button" id="nep_user_active_btn" class="active_btn" onclick="toggleActiveUsers()">Show All</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="clear: both;"></div>
+
+        <div class="btn_form_submit_div">
+            <input class="btn_form_submit" type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+
+{{if .Instructions}} 
+    <div class="inputfrom_instructions">
+    {{.Instructions}}
+    </div> 
+{{end}}
+
+{{if .ErrorMessage}}
+    <div class="inputform_msg_err"> {{.ErrorMessage}} </div>
+{{end}}
+
+</div>
+

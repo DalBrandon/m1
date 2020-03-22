@@ -1,0 +1,45 @@
+{{/*
+// --------------------------------------------------------------------
+// menubar.tmpl -- Brandon'1 m1 Menu Bar.
+//
+// Created: 2020-03-17 DLB
+//
+// --------------------------------------------------------------------
+*/}}
+
+
+{{if .IsLoggedIn}}
+<div class="menubar_area">
+
+<div class="btn_menu_div">
+<a class="btn_menu" href="Accounts">Accounts</a>
+</div>
+
+<div class="btn_menu_div">
+<a class="btn_menu" href="Vendors">Reports</a>
+</div>
+
+<div class="btn_menu_div">
+<a class="btn_menu" href="Cats">Cats</a>
+</div>
+
+<div class="btn_menu_div">
+<a class="btn_menu" href="Vendors">Vendors</a>
+</div>
+
+<div class="btn_menu_div">
+<a class="btn_menu" href="Vendors">Tools</a>
+</div>
+
+{{if .IsAdmin}}
+<div class="btn_menu_div">
+<a class="btn_menu" href="Admin">Admin</a>
+</div>
+{{end}}
+
+<div class="btn_menu_div">
+<a class="btn_menu" href="Help">Help</a>
+</div>
+
+</div>
+{{end}}

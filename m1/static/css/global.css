@@ -1,0 +1,312 @@
+/* --------------------------------------------------------------------
+/* global.css -- CSS For entire Part Number System website.
+/*
+/* Created 2018-09-22 DLB  -- Taken from Work Order Sys, 
+/* --------------------------------------------------------------------
+
+
+/* ------------ Global Settings */
+body {background-color: #aaaaaa; font: normal 14pt/16pt Arial, Univers, sans-serif; margin-top: 0; margin-right: 0;
+     margin-left: 0; }
+
+h1 {color: red; font-size: 18pt; font: Arial, Univers, sans-serif; }
+p {font-size: 14pt; font: Arial, Univers, sans-serif; padding: 5px; margin-right: 30px;}
+
+.page_title {font-size: 18pt; color: #222222; margin-top: 5px; margin-right: 5px; margin-bottom: 10px;}
+
+/* width of screen_area, menubar_area, and content_area set in header.php */
+#screen_area{ border: 4px; border-color: white; border-style: solid; 
+              background-color: #558c89; margin: 0 auto; }
+#middle_area {margin: 10px 5px 5px 15px; width: 100%}
+#nav_area { height: 500px; width: 160px; float: left; padding: 5px}
+
+#login_link {width: 100px; margin-left: 100px;  height: 30px; 
+            border: 2px; border-color: white; border-style: solid;
+            font-size: 20pt; color: yellow; margin-top: 50px; margin-bottom: 30px;
+            background-color: blue; }
+
+.content_area {float: left; padding: 5px;  background-color: #dcdcda; min-height: 400px;}
+
+#header_banner {height: 60px; background-color: #74afad; margin-left: 0; margin-right: 0; margin-top: 0;}
+#header_writeable_area{width: 100%; }
+#header_icon {float: left; margin-left: 10px; margin-top: 5px;}
+#header_website_name {float: left; font-size: 28pt; color: black; margin-left: 60px; 
+                      position: relative; top: 20px;}
+#header_website_name a:link {text-decoration: none; }
+#header_website_name a:visited {text-decoration: none; }
+#header_website_name a:hover {color: yellow}
+#header_account_area {float: right; font-size: 12pt; color: black;  margin-right: 15px; margin-top: 5px; }
+#header_username_div {margin-left: 20px; margin-right: 0px;  text-align: left;}
+#header_logout_div {margin-left: 20px;  text-align: right; font-size: 10pt;}
+.header_topbutton {font-size: 14pt; font-color: black; }
+.header_topbutton_div {float: left; margin-left: 20px; margin-top: 5px;}
+#header_accountmenu_div {margin-top: 10px;}
+
+#footer_area {margin-left: 30px; margin-right: 30px; width: 100%; height: 40px; clear: both;}
+#footer_msg  {color: yellow; font-size: 12pt; font: Arial, Univers, sans-serif; 
+        width:70%; margin-top: 20px; float: left;}
+#footer_home_link {margin-top: 15px; margin-left: 10px; margin-right: 60px; float: right;}
+#footer_masquerader {float: left; margin-top: 21px; font-size: 10pt; color: black; }
+#footer_timer {float: left; margin-top: 21px; margin-left: 20px; font-size: 10pt; color: black; }
+#footer_test_link { float: right; margin-right: 50px; position: relative; top: 10px; font-size: 18px; }
+#footer_test_link a {color: white;}
+
+.login_area   {width: 500px; margin-left: 180px; margin-top: 40px;}
+.login_label  {width: 140px; float: left; font-size: 18pt; margin-top:25px; padding-top: 0px;}
+.login_field  {width: 216px; float: left; height: 50px; font-size: 18pt; margin-top: 15px;}
+.login_select {width: 214px; height: 40px;}
+.login_button {margin-top: 40px; margin-left: 140px;}
+.login_button input {width: 200px; font-size: 20pt;}
+.login_field input {font-size: 18pt; width: 200px;}
+
+#login_fail {margin-left: 100px; color: red; font-size: 20pt; font-weight: bold; position: relative; top: 10px;}
+#welcome_area { margin-left: 20px; width: 90%; }
+
+.msg_background { font-size: 20pt; }
+#logout_msg {width: 500px; margin-left: 100px;}
+#login_link {width: 100px; margin-left: 100px;  height: 30px; 
+            border: 2px; border-color: white; border-style: solid;
+            font-size: 20pt; color: yellow; margin-top: 50px; margin-bottom: 30px;
+            background-color: blue; }
+#login_link a {position: relative; top: 5px; left: 14px;}
+#login_link a:link {text-decoration: none; color: yellow;}
+#login_link a:visited {text-decoration: none; color: yellow; }
+#login_link a:hover {font-size: 22pt; color: white; }
+
+#login_questions {font-size: 16pt; border: 1px solid; border-color: #BBBBBB; width: 140px;  height: 30px; position: relative; left: 650px; top: -80px;}
+#login_questions a {margin-top: 5px; padding: 5px 10px 5px 10px; text-decoration: none; color: #BBBBBB; position: relative; top: 4px;}
+#login_questions a:hover {font-weight: bold; color: black;}
+
+.embedded_btn {font-size: 16pt; border: 1px solid; border-color: #BBBBBB; width: 140px;  height: 30px; position: relative; left: 650px; top: -80px;}
+.embedded_btn a {margin-top: 5px; padding: 5px 10px 5px 10px; text-decoration: none; color: #BBBBBB; position: relative; top: 4px;}
+.embedded_btn a:hover {font-weight: bold; color: black;}
+
+.partnum_btn {font-size: 12pt; border: 1px solid; border-color: #888888; width: 45px;  height: 20px; color: blue; margin-left: 10px; background-color: #CCCCCC;}
+.partnum_btn {margin-top: 5px; padding: 3px 5px 3px 5px; text-decoration: none; }
+.partnum_btn:link {text-decoration: none; }
+.partnum_btn:visited {text-decoration: none; }
+.partnum_btn:hover {font-weight: bold; text-decoration: underline;}
+.partnum_btn:active { text-decoration: underline; font-weight: bold; background-color: red; }
+
+
+.active_btn_div {float: right;  position: relative; top: -60px;}
+.active_btn {font-size: 8pt; width: 90px;  line-height: 1px; height: 17px; }
+
+
+.table_content {}
+.table_content table {font-size: 8pt; border-spacing: 0px; border-color: red; padding: 0px;}
+.table_content th, td {padding: 4px; line-height: 10px;}
+.table_content a:link {text-decoration: none; color: blue; }
+.table_content a:visited {text-decoration: none; color: blue;}
+.table_content a:hover {text-decoration: underline; color: black;}
+.table_limit_msg {font-size: 10pt; position: relative; top: -20px; left: 200px;}
+
+/* ------------ For workorders_showworkorder_form.php */
+.workorders_listdiv   {display: block; height: 25px;}
+.workorders_listtitle {float: left; font-size: 12pt; color: #999999; width: 90px; height: 25px; }
+.workorders_list_value {float: left; font-size: 14pt; font-weight: bold; color: black; margin-left: 0px; margin-right: 20px; height: 25px;}
+
+.partnumber {display: block; width: 90%; font-size: 36pt; text-align:  center; margin-top: 20px; margin-bottom: 35px;}
+
+.param_block {display: block; width: 400px; padding: 2px; height: 30px; }
+.param_label {float: left; width: 150px; font-size: 14pt; margin-top: 0px; margin-bottom: 0px; color: gray;}
+.param_value {float: left;  font-size: 14pt;}
+
+
+/* ------------ For renderlib.php, and the auto generated forms. */
+
+.inputform_area  {margin-top: 10px; margin-bottom: 10px; border: 2px; border-style: solid;
+                 border-color: blue; width: 95%;  max-width: 700px; padding: 10px; }
+
+.inputform_msg_area {width: 70%; float: left; font-size: 16pt; margin-left: 30px;}
+.inputform_msg      {border: 2px; border-style: solid; border-color: green; width: 90%; 
+                     padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px;
+                     margin-bottom: 15px; margin-top: 10px; font-size: 16pt; font-style: bold;}
+.inputform_msg_err  {border: 2px; border-style: solid; border-color: red; width: 90%;  
+                     padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px;
+                     margin-bottom: 15px; margin-top: 10px; font-size: 16pt; font-style: bold; }
+
+#inputform_error_msg   {color: red; }
+#inputform_success_msg {color: black; }
+
+
+.inputform_paramblock {display: block; width: 90%; padding: 2px;}
+.inputform_label {font-size: 16pt; margin-top: 15px; margin-bottom: 3px;}
+
+.inputform_field {width: 100%; }
+.inputform_field input {width: 100%; font-size: 16pt;}
+
+.inputform_text_field {margin-top: 0px; margin-right: 10px; width: 100%; }
+.inputform_text_field input {width: 100%; font-size: 16pt; }
+
+.inputform_selection {width: 100%; }
+.inputform_selection select { width: 100%; font-size: 16pt;}
+
+.inputform_textarea {width: 100%; }
+.inputform_textarea textarea { width: 100%; font-size: 16pt;}
+
+.inputform_boolean_paramblock { margin-top: 5px; width: 90%; }
+
+.inputform_boolean_area { margin-top: 5px; border: 2px; border-style: solid; border-color: gray; padding-top: 5px; }
+.inputform_boolean_label {display: inline; text-align: left; width: 15px; margin-left: 20px; position: relative; top: -5px;}
+.inputform_boolean_group {display: inline; width: 30%;}
+.inputform_boolean_field {display: inline; }
+.inputform_boolean_field input {display: inline; width: 20px; height: 20px; text-align: top; margin: 0px;}
+
+.inputfrom_instructions {padding: 0; margin: 0; }
+.inputfrom_instructions  p {font-size: 16pt; padding: 0; margin: 10px 0px 0px 0px; }
+
+
+/* ------------ For showlogform.php */
+.showlog_selection_area {border: 2px; border-style: solid; border-color: blue; padding: 10px;
+                        margin-right: 20px; font-size: 10pt; float: left; }
+.showlog_label {display: inline; }
+.showlog_load_button {margin-right: 15px; display: inline;}
+.showlog_date_area { display: inline; }
+.showlog_datelabel { display: inline; position: relative; top: 3px;}
+.showlog_date_field { display: inline; }
+.showlog_date_field  input{width: 85px; margin-left: 5px; margin-right: 15px; display: inline;}
+.showlog_checkbox {display: inline; margin-left: 10px;}
+.showlog_checkbox_with_text { display: inline; width: 150px; margin-left: 15px;}
+.showlog_IDLabel { display: inline; position: relative; top: 3px; }
+.showlog_uid_field { display: inline; }
+.showlog_uid_field  input {width: 40px; margin-left: 3px; display: inline;}
+.showlog_data {margin-left: 10px; margin-top: 20px; font-size: 10pt; font-family: monospace; }
+.showlog_error_message {margin-left: 10px; margin-top: 20px; font-size: 14pt; color: red; }
+
+/* ------------ For showlogform.php */
+.wo_sorting_selection_area {border: 2px; border-style: solid; border-color: blue; padding: 10px;
+                        margin-right: 20px; font-size: 10pt; float: left; }
+.wo_sorting_label {display: inline; }
+.wo_sorting_load_button {font-size: 12pt; margin-right: 15px; display: inline;}
+.wo_sorting_date_area { display: inline; }
+.wo_sorting_datelabel { display: inline; position: relative; top: 3px;}
+.wo_sorting_date_field { display: inline; }
+.wo_sorting_date_field  input{width: 85px; margin-left: 5px; margin-right: 15px; display: inline;}
+.wo_sorting_checkbox {display: inline; margin-left: 10px;}
+.wo_sorting_checkbox_with_text { display: inline; width: 150px; margin-left: 15px;}
+.wo_sorting_IDLabel { display: inline; position: relative; top: 3px; }
+.wo_sorting_uid_field { display: inline; }
+.wo_sorting_uid_field  input {width: 40px; margin-left: 3px; display: inline;}
+.wo_sorting_data {margin-left: 10px; margin-top: 20px; font-size: 10pt; font-family: monospace; }
+.wo_sorting_error_message {margin-left: 12px; margin-top: 20px; font-size: 14pt; color: red; }
+.wo_sorting_selection {display: inline; width: auto; }
+.wo_sorting_selection select { width: auto; font-size: 12pt;}
+.wo_sorting_label {display: inline; font-size: 12pt; margin-top: 15px; margin-bottom: 3px;}
+
+/* ------------ For admin_masqueradeform.php */
+.admin_selection_area {border: 2px; border-style: solid; border-color: blue; padding: 10px;
+                        margin-right: 20px; font-size: 10pt; float: left; }
+.admin_masquerade_button {margin-right: 15px; display: inline;}
+.admin_data_area { display: inline; }
+.admin_datalabel   { display: inline; position: relative; top: 3px;}
+.admin_data_field { display: inline; }
+
+
+/* ------ Standard SUBMIT button in a form. */
+.btn_form_submit_div { margin-top: 20px; }
+.btn_form_submit {
+  font-size:20px;
+  font-family:Arial;
+  font-weight:normal;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #1a181a;
+  padding:4px 26px;
+  text-decoration:none;
+  background:-moz-linear-gradient( center top, #d9d9d9 30%, #f0f0f0 75% );
+  background:-ms-linear-gradient( top, #d9d9d9 30%, #f0f0f0 75% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9d9d9', endColorstr='#f0f0f0');
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(30%, #d9d9d9), color-stop(75%, #f0f0f0) );
+  background-color:#d9d9d9;
+  color:#0;
+  display:inline-block;
+}.btn_form_submit:hover {
+  background:-moz-linear-gradient( center top, #f0f0f0 30%, #d9d9d9 75% );
+  background:-ms-linear-gradient( top, #f0f0f0 30%, #d9d9d9 75% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#d9d9d9');
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(30%, #f0f0f0), color-stop(75%, #d9d9d9) );
+  background-color:#f0f0f0;
+}.btn_form_submit:active {
+  position:relative;
+  top:1px;
+}
+
+/* ------------- Buttons for menu items at top of forms. */
+.menubar_area {float: left; padding: 5px; font-size: 10pt;  height: 25px; margin-bottom: 5px;}  /* background-color: #cccccc; */
+.btn_menu_div {float: left; margin-right: 10px; }
+.btn_menu {
+  font-size: 16px;
+  font-family: Arial;
+  font-weight: bold;
+  border: 1px solid #ffffff;
+  background-color: #74afad;
+  padding: 3px;
+  text-decoration: none;
+  color: #ffffff;
+  display:inline-block;
+}
+.btn_menu:hover { text-decoration: underline; }
+.btn_menu:visited { text-decoration: none; }
+.btn_menu:active { text-decoration: underline; }
+
+/* ------------ Buttons in background area. */
+.btn_backgnd_div { margin-top: 15px;}
+
+.btn_backgnd {
+  -moz-box-shadow:inset 0px 0px 0px 0px #fff6af;
+  -webkit-box-shadow:inset 0px 0px 0px 0px #fff6af;
+  box-shadow:inset 0px 0px 0px 0px #fff6af;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+  background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+  background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+  background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+  background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+  background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+  background-color:#ffec64;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:2px solid #ebd6b7;
+  display:inline-block;
+  cursor:pointer;
+  color:#333333;
+  font-family:Arial;
+  font-size:17px;
+  font-weight:bold;
+  padding: 9px 10px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffee66;
+}
+
+.btn_backgnd:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+  background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+  background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+  background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+  background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+  background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+  background-color:#ffab23;
+}
+
+.btn_backgnd:active {
+  position:relative;
+  top:1px;
+}
+
+.wostr { font-family: monospace; font-weight: bold; }
+.wostr a {color: blue; text-decoration: none;}
+.wostr a:link {color: blue; text-decoration: none;}
+.wostr a:hover {color: black; text-decoration: none;}
+.wostr a:visited {color: blue; text-decoration: none;}
+
+/* Default Markdown for the website.  */
+.markdown {margin-top: 10px; margin-left: 10px; font-size: 14pt; color: black;}
+.markdown h1 {font-size: 22pt; color: black;}
+.markdown h2 {font-size: 16pt; text-decoration: underline;}
+.markdown h3 {font-size: 14pt; font-weight: bold;}
+.markdown p  {margin-top: 0px; margin-bottom: 20px;}
+.markdown code {font-size: 13pt; font-weight: bold; color: #333333;}

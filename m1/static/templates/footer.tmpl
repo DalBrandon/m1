@@ -1,0 +1,28 @@
+{{/*
+// --------------------------------------------------------------------
+// footer.tmpl -- footer template for all pages that use header.tmpl
+//
+// Created: 2014-12-29 DLB for Epic
+// Copied:  2020-03-17 DLB for m1  
+// --------------------------------------------------------------------
+*/}}
+
+</div> <!-- this div is to end the middle area. -->
+
+<div style="clear: both; height: 2px"></div>
+
+<div id="footer_area">
+    <div id="footer_msg">
+        <span> db Engineering, Newport Beach, CA</span> 
+        <span style="margin-left: 20px">2020</span>
+    </div>
+    <div id="footer_home_link">
+        {{if .HideAboutLink}} {{else}}
+        <a href="About">About</a> {{end}}
+    </div>
+</div>
+
+</div>  <!-- End of screen div. -->
+
+</body>
+</html>

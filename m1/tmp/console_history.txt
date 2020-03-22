@@ -1,0 +1,312 @@
+help
+verson
+version
+exit
+help
+olddata cat
+exit
+help
+olddata cat
+exit
+olddata cat 2020
+olddata cat 
+olddata cat 2019
+exit
+olddata cat 2019
+exit
+olddata cat 2019
+exit
+olddata cat 2019
+olddata cat 2018
+exit
+olddata cat 2019
+eixt
+exit
+olddata cat 2019
+exit
+olddata accounts 2019
+olddata accounts 2020
+olddata accounts 2018
+olddata accounts 2017
+olddata accounts 2016
+olddata accounts 2015
+olddata accounts 2014
+olddata accounts 2013
+olddata accounts 2012
+olddata accounts 2011
+olddata accounts 2010
+olddata accounts 2009
+olddata accounts 2008
+olddata accounts 2007
+olddata accounts 2006
+olddata accounts 2005
+olddata accounts 2004
+olddata accounts 2003
+olddata accounts 2002
+olddata accounts 2003
+olddata accounts 205
+olddata accounts 2005
+olddata accounts 2006
+olddata accounts 2007
+olddata accounts 2008
+olddata accounts 2009
+olddata accounts 2010
+olddata accounts 2011
+olddata accounts 2012
+olddata accounts 2019
+olddata accounts 2018
+olddata accounts 2017
+olddata accounts 2015
+olddata accounts 2014
+olddata accounts 2013
+olddata accounts 2012
+olddata accounts 2011
+olddata accounts 2020
+olddata accounts 2019
+olddata accounts 2018
+olddata accounts
+olddata accounts 2019
+olddata accounts
+olddata vendors 2019
+exit
+list_accounts
+list_account
+help
+list-accounts
+eixt
+exit
+list-accounts
+exit
+olddata check
+list-accounts
+exit
+olddata check
+exit
+help
+hide-log
+help gin-on-console
+gin-on-consol false
+gin-on-console false
+exit
+gin-on-console
+gin-on-console true
+exit
+list-accounts
+add-alias-to-account 6 alias="Dals Work"
+list-accounts
+exit
+list-accounts
+help delete-alias-from-account
+help
+help add-alias-to-account
+help
+list-accounts
+delete-alias-from-account 6 alias="Dals Work"
+exit
+delete-alias-from-account 6 alias="Dals Work"
+exit
+delete-alias-from-account 6 alias="Dals Work"
+list-accounts
+exit
+list-accounts
+exit
+list-accounts
+olddata vendors
+exit
+load-old-vendors
+exit
+load-old-vendors
+exit
+load-old-vendors
+exit
+load-old-vendors
+exit
+load-old-vendors
+exit
+load-old-vendors
+exit
+load-old-vendors
+exit
+load-old-vendors
+exit
+load-old-vendors
+exit
+load-old-vendors
+ricy
+exit
+load-old-vendors
+exit
+load-vendors
+?
+load-old-vendors
+load-old-vendors update
+exit
+load-old-vendors update
+exit
+load-old-vendors update
+exit
+load-old-vendors update
+exit
+load-old-vendors update
+exit
+load-old-vendors update
+exit
+help
+help olddata
+olddata accounts
+olddata check
+exit
+list-accounts
+olddata load
+list-accounts
+exit
+list-accounts
+olddata-load
+olddata load
+exit
+olddata load
+list-accounts
+exit
+olddata load
+list-accounts
+help olddata
+olddata cat
+exit
+list-cats
+olddata load
+list-cats
+exit
+olddata load
+list-vendors
+exit
+olddata load
+list-vendors
+exit
+olddata load
+list-transactions
+list-transactopms
+help
+list-tranactions
+list-tranactions skip=12000
+list-tranactions skip=14000 
+list-tranactions 
+list-tranactions skip=200
+list-tranactions skip=1000
+list-tranactions skip=800
+exit
+olddata load
+list-accounts
+exit
+olddata load
+exit
+olddata load
+exit
+olddata load
+exit
+olddata load
+exit
+olddata load
+exiot
+exit
+olddata load
+exit
+olddata load
+exit
+load olddata
+olddata load
+exit
+olddata load
+exit
+olddata load
+save-data
+load-data
+exit
+load-data
+list-accounts
+list-cats
+list-vendors
+list-transactions
+help
+exit
+list-transactions
+load-data
+list-transactions
+exit
+load-data
+list-cats
+exit
+olddata load
+help
+save-data
+exit
+list accounts
+list-accounts
+exit
+olddata load
+save-data
+exit
+olddata load
+save-data
+exit
+list-accounts
+exit
+save-data
+exit
+list-accounts
+list-backups
+exit
+olddata load
+save-database
+help
+save-data
+list-accounts
+list-cats
+exit
+list-accounts
+list-cats
+list-vendors
+list-transactions
+exit
+list-accounts
+list-cats
+list-vendors
+list-tranactions
+list-transactions
+list-backups
+make-backup
+exit
+make-backup
+list-backups
+exit
+make-backup
+exit
+list-accounts
+make-backup
+make-backup test
+make-backup aaaa
+exit
+make-backup
+exit
+olddata load
+save-data
+make-backup
+list-backups
+delete-backup Backup_2020-03-21-20-58-23
+list-backups
+delete-backup dal
+make-backup
+make-backup test
+load-backup test
+help
+load-data
+save-data
+load-data
+ll
+save-data
+list-backups
+delete-backup test
+ll
+list-backups
+make-backup Genesis
+list-backups
+exit

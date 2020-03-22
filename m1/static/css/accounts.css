@@ -1,0 +1,14 @@
+/* --------------------------------------------------------------------
+** accounts.css -- CSS to layout accounts page
+**
+** Created 2020-03-15 DLB
+** --------------------------------------------------------------------
+*/
+
+#nep_user {float: left; width: 250px; margin-left: 0px; top: 0px; height: 90px;}
+#nep_user_block {}
+#nep_user_label {}
+#nep_user_field {}
+
+#nep_user_active_div{}
+#nep_user_active_btn {}

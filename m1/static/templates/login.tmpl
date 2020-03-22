@@ -1,0 +1,75 @@
+{{/*
+// --------------------------------------------------------------------
+// new_epic_pn.tmpl -- template to enter a new epic pn.
+//
+// Created 2018-09-24 DLB
+// --------------------------------------------------------------------
+*/}}
+
+<script type="application/json" id="users">
+{{.UsersJson}}
+</script>
+
+<script type="text/javascript">
+
+function clearSelBox(sel) {
+    var n = sel.length;
+    var i;
+    for (i = 0; i < n; i++) {
+        sel.remove(0);
+    }
+}
+
+function fillUsers() {
+    var userlst = JSON.parse(document.getElementById("users").innerHTML);
+    var sel = document.getElementById("lin_user_field");
+    clearSelBox(sel);
+    var option1 = document.createElement("option");
+    option1.text = "";
+    option1.label = "";
+    option1.value = "";
+    sel.add(option1)    
+    var i;
+    for(i = 0; i < userlst.length; i++) {
+        d = userlst[i];
+        var option = document.createElement("option");
+        var label = d.Name;
+        option.text = label;
+        option.label = label;
+        option.value = label;
+        sel.add(option)
+    }
+}
+
+function startUp() {
+    fillUsers();
+}
+
+</script>
+
+
+<div class="login_area">
+<div class="page_title"> {{- .PageTitle -}}</div>
+
+<form action="LoginPost" method="post">
+    <div id="lin_user">
+        <div class="inputform_paramblock" id="lin_user_block">
+            <div class="login_label" id="lin_user_label">User:</div>
+            <div class="login_field">
+                <select id="lin_user_field" name="User" class="login_select">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="login_label"> Password: </div> 
+    <div class="login_field"> <input type="password" name="Password"> </div>
+    <div style="clear: both;"></div>
+    <div style="margin-left: 140px; margin-top: 30px; margin-bottom: 50px;">
+        <input class="btn_backgnd" style="width: 208px;" type="submit" value="Log In">
+    </div>
+</form>
+</div>
+
+<div id="login_fail">{{.ErrorMessage}}</div> 
+

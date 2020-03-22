@@ -1,0 +1,73 @@
+{{/*
+// --------------------------------------------------------------------
+// header.tmpl -- For nav area that fits to left of most pages.
+//
+// Created: 2014-12-29 DLB For Epic
+// Copied:  2020-03-17 DLB for m1
+//
+//  This template produces html for a header that works with a footer.  It should be
+//  supplied with a sructure that defines: 
+//     PageTabTitle, StyleSheets, BrowserWidth, ContentWidth, IsLoggedIn, 
+//     UserFormattedName, IsAdmin
+//
+// --------------------------------------------------------------------
+*/}}
+
+<!DOCTYPE html>
+ 
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    {{if .PageTabTitle}} <title> {{- .PageTabTitle -}} </title> {{else}}
+    <title>EPIC PN Sys</title> {{end}}
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+    {{range .StyleSheets}} 
+        <link rel="stylesheet" type="text/css" href="../css/ {{- . -}} .css">
+        {{end}}
+     <style>
+        {{$bw := 1400}}  {{$cw := 1350}} 
+        {{if .BrowserWidth}} {{$bw = .BrowserWidth}} {{end}}
+        {{if .ContentWidth}} {{$cw = .ContentWidth}} {{end}}
+        #screen_area {width: {{$bw -}} px;}
+        .content_area {width: {{$cw -}} px;} 
+        .menubar_area {width: {{$cw -}} px;} 
+        </style>
+</head>
+ 
+<body {{if .OnLoadFuncJS}} onload="{{.OnLoadFuncJS}}()" {{end}}>
+<div id="screen_area">
+<div id="header_banner">
+    <div id="header_writeable_area">
+    <div id="header_icon"> <a href="welcome"> <img src="../img/dalcarol.png" height="50px"> </a></div>
+    <div id="header_website_name">Brandon m1 Accounting</div>
+    {{if .IsLoggedIn}}
+        <div id="header_account_area">
+            <div id="header_username_div"> {{.UserName}} {{if .IsAdmin}}*{{end}} </div>
+            <div id="header_accoutmenu_div">
+                <!--
+                <div class="header_topbutton_div">
+                  <a class="header_topbutton" href="account_settings">Settings</a>
+                  </div>
+                -->
+                <div class="header_topbutton_div">
+                  <a class="header_topbutton" href="Logout">Logout</a>
+                  </div>
+                </div>
+                </div>
+    {{else}}
+        <div id="header_account_area">
+            <div id="header_username_div"><br></div>
+            <div id="header_accoutmenu_div">
+                <div class="header_topbutton_div"></div>
+                <div class="header_topbutton_div">
+                 {{if .HideLoginLink}} {{else}}
+                  <a class="header_topbutton" href="Login">Login</a> {{end}}
+                  </div>
+                </div>
+                </div>
+    {{end}}
+    </div>
+ </div>
+ <div style="clear: both;"></div>
+ <div id="middle_area">

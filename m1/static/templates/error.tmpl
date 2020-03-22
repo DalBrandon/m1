@@ -1,0 +1,22 @@
+{{/*
+// --------------------------------------------------------------------
+// error.tmpl -- Displays Error Page. 
+//
+// Created: 2018-10-01 DLB
+//
+// --------------------------------------------------------------------
+*/}}
+
+<div class="content_area">
+    <div class="page_title"> {{- .PageTitle -}}</div>
+
+    <div class="errorpage">
+    <h1>System Error Detected</h1>
+    <div class="markdown"> {{.ErrorMessage}} </div>
+    <div style="margin-top: 40px;">
+        <p> This error is something unusual -- it should not happen in the normal course of 
+            using this website.  Please take a picture of this screen and text or email
+        to Dal Brandon at 562-857-7840 or dalbrandon@gmail.com.  Thanks! </p>
+    </div>
+    </div>
+</div>
