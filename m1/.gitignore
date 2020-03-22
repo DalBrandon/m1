@@ -2,3 +2,5 @@ m1
 config.txt
 test.csv
 server.key
+server.crt
+logs
