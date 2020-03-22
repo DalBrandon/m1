@@ -20,4 +20,6 @@ func Test_LogWriting(t *testing.T) {
 	Infof("This is a info message.")
 	Warnf("This is a warn message.")
 	Errorf("This is a error message.")
+	SetLogFolder(".")
+	Infof("A message after the folder was set.")
 }

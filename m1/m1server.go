@@ -11,14 +11,16 @@ import (
 	"dbe/lib/util"
 	"dbe/m1/config"
 	"dbe/m1/console"
-	"dbe/m1/m1sql"
 	"dbe/m1/pages"
 	"dbe/m1/sessions"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"os"
 	"strings"
+
+	"github.com/gin-gonic/gin"
 )
+
+//	"github.com/gin-gonic/gin"
 
 var gVersion = "Spring 2020 v1.1"
 var gServer *gin.Engine
@@ -34,26 +36,31 @@ func main() {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		return
 	}
-	var ok bool
+	logfolder, ok := config.GetParam("log_folder")
+	if !ok {
+		log.Fatalf("log_folder not provided in config.txt")
+	}
+	log.SetLogFolder(logfolder)
+
 	gHostAddr, ok = config.GetParam("hostaddr")
 	if !ok {
 		log.Warnf("The hostaddr config parameter not found. Using %q.\n", gHostAddr)
 		gHostAddr = ":8081"
 		config.SetParam("hostaddr", gHostAddr)
 	}
-	sql_pw, ok := config.GetParam("sql_pw")
-	if !ok {
-		err = fmt.Errorf("Mysql password not found in config file.")
-		log.Errorf("%v", err)
-		fmt.Fprintf(os.Stderr, "%v\n", err)
-		return
-	}
-	err = m1sql.OpenDatabase(sql_pw)
-	if err != nil {
-		log.Errorf("%v", err)
-		fmt.Fprintf(os.Stderr, "%v\n", err)
-		return
-	}
+	// sql_pw, ok := config.GetParam("sql_pw")
+	// if !ok {
+	// 	err = fmt.Errorf("Mysql password not found in config file.")
+	// 	log.Errorf("%v", err)
+	// 	fmt.Fprintf(os.Stderr, "%v\n", err)
+	// 	return
+	// }
+	// err = m1sql.OpenDatabase(sql_pw)
+	// if err != nil {
+	// 	log.Errorf("%v", err)
+	// 	fmt.Fprintf(os.Stderr, "%v\n", err)
+	// 	return
+	// }
 
 	console.RegistorCmd("version", "", "Gives the version of this server.", handle_version)
 
@@ -73,7 +80,7 @@ func main() {
 		}
 	}
 
-	// Configure startup page.
+	//Configure startup page.
 	gServer.GET("/", func(c *gin.Context) { c.Redirect(303, "/Main") })
 
 	dev_bypass, ok := config.GetParam("dev_bypass")

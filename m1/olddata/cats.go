@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-var cat_file string = "/home/dal/dev/src/dbe/m1/olddata/Categories.csv"
+var cat_file string = "Categories.csv"
 
 type CatItem struct {
 	Alias string
@@ -31,9 +31,10 @@ type catheadermap struct {
 func GetCatData(c *util.Context) ([]*CatItem, error) {
 	records := make([]*CatItem, 0, 1000)
 	var err error
-	fi, err := os.Open(cat_file)
+	fn := olddata_folder + cat_file
+	fi, err := os.Open(fn)
 	if err != nil {
-		c.Printf("Error opening %q. Err=%v\n", cat_file, err)
+		c.Printf("Error opening %q. Err=%v\n", fn, err)
 		return records, err
 	}
 	defer fi.Close()

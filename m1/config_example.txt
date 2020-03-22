@@ -23,3 +23,12 @@ gin_on_console=false
 
 // With 'allow_universal_pw' you can allow everbody to use the same password.
 //allow_universal_pw=true
+
+// Location for Data and Backups
+data_folder=/home/dal/m1data
+
+// Location for Log files
+log_folder=/home/dal/m1data/logs 
+
+// Location for old data files
+olddata_folder=/home/dal/m1data/olddata

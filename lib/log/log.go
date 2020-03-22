@@ -20,17 +20,35 @@ var m_console bool = true
 var m_allowPass bool = true
 var m_file bool = true
 var m_errcnt int
+var m_memory_mode bool = true
+var m_memory []string = []string{}
 var m_filelock sync.Mutex
+var m_logfolder string = "./logsfordal/"
 
 func init() {
-	fi, err := os.Stat("./logs")
+	m_memory = make([]string, 0, 100)
+	m_memory_mode = true
+}
+
+// SetLogFolder sets up the output folder for logging, and dumps any buffered
+// log messages.  Should be called at least once at the beginning of a program
+// or log message will never be writen to disk. Note: if something goes wrong
+// this function will panic.
+func SetLogFolder(folder string) {
+	m_filelock.Lock()
+	defer m_filelock.Unlock()
+	m_logfolder = folder
+	if !strings.HasSuffix(m_logfolder, "/") {
+		m_logfolder += "/"
+	}
+	fi, err := os.Stat(m_logfolder)
 	if err != nil {
-		err := os.Mkdir("./logs", 0777)
+		err := os.Mkdir(m_logfolder, 0777)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Unable to create logs directory. Err=%v\n", err)
 			panic(err)
 		}
-		fi, err = os.Stat("./logs")
+		fi, err = os.Stat(m_logfolder)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Cannot get info about logs dir. Err=%v\n", err)
 			panic(err)
@@ -39,6 +57,30 @@ func init() {
 	if !fi.IsDir() {
 		err := fmt.Errorf("Unable to create logs directory -- is file instead.")
 		fmt.Fprintf(os.Stderr, "%v\n", err)
+		panic(err)
+	}
+	m_memory_mode = false
+	// At this point, we probably have buffered up messages that need to be
+	// added to the new log file.  Do that here.
+	if len(m_memory) <= 0 {
+		return
+	}
+	t := time.Now()
+	fn := fmt.Sprintf("%sLog_%s.txt", m_logfolder, t.Format("06-01-02"))
+	f, err := os.OpenFile(fn, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		err = fmt.Errorf("Unable to open the log file for the first time. Err=%v", err)
+		panic(err)
+	}
+	for _, m := range m_memory {
+		if _, err := f.Write([]byte(m)); err != nil {
+			err = fmt.Errorf("Unable to write to log file for first time. Err=%v", err)
+			panic(err)
+		}
+	}
+	m_memory = []string{}
+	if err := f.Close(); err != nil {
+		fmt.Fprintf(os.Stderr, "Unable to close log file.\n")
 		panic(err)
 	}
 }
@@ -112,7 +154,13 @@ func Logit(level, msg string) {
 
 	m_filelock.Lock()
 	defer m_filelock.Unlock()
-	fn := fmt.Sprintf("./logs/Log_%s.txt", t.Format("06-01-02"))
+	if m_memory_mode {
+		if len(m_memory) < 200 {
+			m_memory = append(m_memory, msgout)
+		}
+		return
+	}
+	fn := fmt.Sprintf("%sLog_%s.txt", m_logfolder, t.Format("06-01-02"))
 	f, err := os.OpenFile(fn, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		m_errcnt += 1
@@ -141,7 +189,7 @@ func Logit(level, msg string) {
 }
 
 func ReadLogFile(date time.Time) (string, error) {
-	fn := fmt.Sprintf("./logs/Log_%s.txt", date.Format("06-01-02"))
+	fn := fmt.Sprintf("%sLog_%s.txt", m_logfolder, date.Format("06-01-02"))
 	data, err := ioutil.ReadFile(fn)
 	if err != nil {
 		return "", err

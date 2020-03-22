@@ -310,3 +310,34 @@ list-backups
 make-backup Genesis
 list-backups
 exit
+help olddata
+olddata cat
+olddata vendors
+exit
+olddata load
+olddata cat
+exit
+olddata load
+olddata cats
+help olddata
+oldata cat
+olddata cat
+exit
+olddata cat
+exit
+olddata cat
+exit
+olddata cats
+olddata cat
+exit
+olddata cat
+olddata vendors
+help olddata
+olddata accounts
+help olddata
+olddata load
+exit
+save-data
+exit
+eixt
+exit

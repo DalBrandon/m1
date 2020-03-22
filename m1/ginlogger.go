@@ -8,8 +8,9 @@
 package main
 
 import (
-	"epic/lib/log"
-	"epic/lib/util"
+	"dbe/lib/log"
+	"dbe/lib/util"
+
 	"github.com/gin-gonic/gin"
 )
 

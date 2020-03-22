@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-var vendor_file string = "/home/dal/dev/src/dbe/m1/olddata/Vendors.csv"
+var vendor_file string = "Vendors.csv"
 
 type VendorItem struct {
 	Alias string
@@ -33,9 +33,10 @@ type vendorheadermap struct {
 func GetVendorData(c *util.Context) ([]*VendorItem, error) {
 	records := make([]*VendorItem, 0, 2500)
 	var err error
-	fi, err := os.Open(vendor_file)
+	fn := olddata_folder + vendor_file
+	fi, err := os.Open(fn)
 	if err != nil {
-		c.Printf("Error opening %q. Err=%v\n", vendor_file, err)
+		c.Printf("Error opening %q. Err=%v\n", fn, err)
 		return records, err
 	}
 	defer fi.Close()
